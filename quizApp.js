@@ -1,3 +1,4 @@
+
 function Quiz(questions) {
     this.score = 0;
     this.questions = questions;
@@ -75,17 +76,21 @@ function showProgress() {
 
 function showScores() {
     let gameOverHTML = "<h1>Result</h1>";
-    gameOverHTML += "<h2 id='score'> Your scores: " + quiz.score + "</h2>";
+    gameOverHTML += "<h2 id='score'> Your score: " + (quiz.score/2)*10 + "%" +"</h2>";
     let element = document.getElementById("quiz");
     element.innerHTML = gameOverHTML;
 
-    if (quiz.score < 6) {
-    gameOverHTML = "<h2 id='score'> Mehn! You Don't know Football </h2>";
-    let element = document.getElementById("quiz1");
+    if (quiz.score < 13) {
+    gameOverHTML = "<h2 id='score'> Mehn! You Don't know Football <br>&#128544;</h2>";
+    let element = document.getElementById("quiz1"); 
+    let visible = document.getElementById("hide");
+    visible.style.display = "block";
     element.innerHTML = gameOverHTML;
 }else{
-    gameOverHTML = "<h2 id='score'> Nice one! You are indeed a Football Analyst </h2>";
+    gameOverHTML = "<h2 id='score'> Nice one! You are indeed a Football Analyst <br>&#128512;</h2>";
     let element = document.getElementById("quiz1");
+    let visible = document.getElementById("hidden");
+    visible.style.display = "block";
     element.innerHTML = gameOverHTML;
 }
 
@@ -104,7 +109,19 @@ var questions = [
     new Question("2009 UCL final was played in which city?", ["Paris", "Rome", "Manchester", "Milan"], "Rome"),
     new Question("Euro 2004 trophy was won by which country", ["Greece", "Portugal","France", "Holland"], "Greece"),
     new Question("Who won 2008 world player of the year?", ["Ronaldo", "Henry", "Messi", "Kaka"], "Ronaldo"),
-    new Question("Who scored the 2nd goal in 2006 UCL final", ["Campbell", "Belleti", "Eto", "Deco"], "Eto")
+    new Question("Who scored the 2nd goal in 2006 UCL final", ["Campbell", "Belleti", "Eto", "Deco"], "Eto"),
+
+    new Question("Who won 2018 FIFA men player of the year award?", ["Ronaldo", "Messi","Modric", "Lewandoski"], "Modric"),
+    new Question("Which country hosted 2006 world cup tournament?", ["Brazil", "South Africa", "Italy", "Germany"], "Germany"),
+    new Question("Which football club is known as the Los Blancos?", ["Napoli", "R.Madrid","AC Milan", "Barcelona"], "R.Madrid"),
+    new Question("Which Nation won the 1996 Olympics Gold Medal?", ["Ghana", "Nigeria", "Spain", "England"], "Nigeria"),
+    new Question("R.Madrid VS Barcelona derby is known as the ...", ["El clasico", "derby", "El cashico", "Match"], "El clasico"),
+    new Question("Roger Milla is from which country?", ["Ghana", "Italy","Cameroon", "Senegal"], "Cameroon"),
+    new Question("Shevchenko played for which football Club?", ["Ac Milan", "Juventus", "R.Madrid", "Seville"], "Ac Milan"),
+    new Question("AFCON 2008 trophy was won by which country", ["Egypt", "Ghana","Cote D'ivore", "Tunisia"], "Egypt"),
+    new Question("Nicholas Anelka played for which club?", ["Man.United", "R.Madrid", "Bayern Munich", "PSG"], "R.Madrid"),
+    new Question("Who scored the 1st goal in 2015 UCL final", ["Neymar", "Morata", "Messi", "Rakitic"], "Rakitic")
+
 ];
 
 // create quiz
@@ -118,7 +135,7 @@ let counter = {};
     window.addEventListener("load", function () {
         //countdown in seconds
         //example - 5 mins = 5x60 = 300 secs
-        counter.end = 120;
+        counter.end = 300;
 
         //get the containers
         counter.min = document.getElementById("cd-min");
@@ -147,3 +164,13 @@ let counter = {};
         }
     });
 
+// page redirection
+	function myChange(){
+		window.location.href="index.html";
+	}
+
+    function myVisit(){
+		window.location.href="https://echris.netlify.app";
+	}
+
+	
