@@ -101,7 +101,7 @@ function showScores() {
 // create questions here
 var questions = [
     new Question("Who has the record of 91 goals in a year?", ["Ronaldo", "Messi","Kaka", "Lewandoski"], "Messi"),
-    new Question("Who scored the only goal in 2013 UCL final?", ["Gotze", "Robben", "Hummels", "Muller"], "Robben"),
+    new Question("Who scored the last goal in 2013 UCL final?", ["Gotze", "Robben", "Hummels", "Muller"], "Robben"),
     new Question("Roberto Baggio plays for which country", ["Italy", "Germany","Brazil", "Spain"], "Italy"),
     new Question("Who won 1998 world player of the year?", ["Rivaldo", "Zidane", "Owen", "Ronaldo de lima"], "Zidane"),
     new Question("Who scored the 2nd goal in 2008 UCL final", ["Ronaldo", "Scholes", "Lampard", "Drogba"], "Lampard"),
