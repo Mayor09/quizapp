@@ -170,7 +170,7 @@ let counter = {};
 	}
 
     function myVisit(){
-		window.location.href="https://echris.netlify.app";
+		window.location.href="https://mayor09.github.io/Echris";
 	}
 
 	
