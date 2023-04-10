@@ -959,6 +959,44 @@
 
 
 
-                        
-<script type="text/javascript" src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js"></script></body>
+				    <script>
+				    
+				    //countdown timer
+let counter = {};
+    window.addEventListener("load", function () {
+        //countdown in seconds
+        //example - 5 mins = 5x60 = 300 secs
+        counter.end = 300;
+
+        //get the containers
+        counter.min = document.getElementById("cd-min");
+        counter.sec = document.getElementById("cd-sec");
+
+        //start if not past end date
+        if (counter.end > 0) {
+            counter.ticker = setInterval(function(){
+                // stop if passed end time
+                counter.end--;
+                if (counter.end <= 0) {
+                    clearInterval(counter.ticker);
+                    counter.end = 0;
+                    showScores();
+                }
+
+                //calculate remaining time
+                let secs = counter.end;
+                let mins = Math.floor(secs / 60);// 1 min = 60 secs
+                secs -= mins * 60;
+
+                //update HTML
+                counter.min.innerHTML = mins;
+                counter.sec.innerHTML = secs;
+            }, 1000);
+        }
+    });
+
+				    
+				    </script>                 
+<script type="text/javascript" src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js"></script>
+</body>
 </html>
